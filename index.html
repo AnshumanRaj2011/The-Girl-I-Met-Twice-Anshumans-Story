@@ -846,45 +846,7 @@ heart.remove();
 
 });
 
-  function heartExplosion(){
-
-for(let i=0;i<120;i++){
-
-const heart=document.createElement("div");
-heart.classList.add("big-heart");
-heart.innerHTML="❤";
-
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(15+Math.random()*40)+"px";
-heart.style.animationDuration=(3+Math.random()*2)+"s";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-heart.remove();
-},4000);
-
-}
-
-  }
-
-  function increaseMusic(){
-
-let vol = music.volume;
-
-const interval = setInterval(()=>{
-
-if(vol < 1){
-vol += 0.05;
-music.volume = vol;
-}
-else{
-clearInterval(interval);
-}
-
-},200);
-
-  }
+  
   
 
 </script>
