@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Girl I Met Twice</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+padding:0;
+background:linear-gradient(135deg,#ffb6c1,#ffd6e7,#ffeaf4);
+font-family:'Poppins',sans-serif;
+overflow-x:hidden;
+display:flex;
+justify-content:center;
+}
+
+.heart{
+position:fixed;
+bottom:-50px;
+color:#ff4d88;
+font-size:20px;
+animation:floatUp linear infinite;
+opacity:0.7;
+pointer-events:none;
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(0) scale(0.8);
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh) scale(1.4);
+opacity:0;
+}
+}
+
+.container{
+max-width:850px;
+background:white;
+margin:40px 20px;
+padding:40px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1{
+font-family:'Playfair Display',serif;
+text-align:center;
+color:#e6004c;
+font-size:42px;
+margin-bottom:25px;
+}
+
+.story{
+font-size:19px;
+line-height:2.1;
+color:#333;
+letter-spacing:0.3px;
+max-width:700px;
+margin:auto;
+}
+
+.music-btn{
+position:fixed;
+top:20px;
+right:20px;
+background:#ff4d88;
+border:none;
+color:white;
+padding:12px 18px;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+#confession{
+text-align:center;
+font-size:34px;
+color:#ff0066;
+margin-top:40px;
+opacity:0;
+transition:all 2s ease;
+}
+
+#confession.show{
+opacity:1;
+text-shadow:0 0 20px pink,0 0 40px #ff4da6;
+transform:scale(1.1);
+}
+
+@media(max-width:600px){
+
+.container{
+padding:25px;
+margin:20px;
+}
+
+h1{
+font-family:'Playfair Display',serif;
+text-align:center;
+color:#e6004c;
+font-size:44px;
+margin-bottom:30px;
+letter-spacing:1px;
+}
+
+.story{
+font-size:17px;
+line-height:2;
+}
+
+}
+  #intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(135deg,#ffb6c1,#ffd6e7,#ffeaf4);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:999;
+text-align:center;
+}
+
+.welcome-text{
+font-family:'Playfair Display',serif;
+font-size:50px;
+color:#ff0066;
+margin-bottom:20px;
+animation:fadeIn 2s ease;
+}
+
+.intro-sub{
+font-size:20px;
+color:#444;
+margin-bottom:40px;
+}
+
+.start-btn{
+padding:15px 35px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:#ff4d88;
+color:white;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.start-btn:hover{
+transform:scale(1.05);
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+  .petal{
+position:fixed;
+top:-20px;
+color:#ff4d6d;
+font-size:18px;
+pointer-events:none;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-20px) rotate(0deg);
+opacity:1;
+}
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+}
+
+  .cursor-heart{
+position:fixed;
+pointer-events:none;
+color:#ff4d88;
+font-size:18px;
+animation:heartFade 1s linear forwards;
+text-shadow:0 0 8px pink,0 0 15px #ff4da6;
+}
+
+@keyframes heartFade{
+0%{
+transform:scale(1);
+opacity:1;
+}
+100%{
+transform:scale(2);
+opacity:0;
+}
+}
+  
+  
+</style>
+
+</head>
+
+<body>
+  <div id="intro">
+
+<h1 class="welcome-text">Welcome Sakshi ❤️</h1>
+
+<p class="intro-sub">
+Someone wrote something for you...
+</p>
+
+<button class="start-btn" onclick="startStory()">
+Start Reading
+</button>
+
+  </div>
+
+  
+
+<button class="music-btn" onclick="toggleMusic()" id="musicBtn">🎵 Play Music</button>
+
+<audio id="bgMusic" loop>
+<source src="Aap ki nazron ne samjha.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+<h1>The Girl I Met Twice</h1>
+
+<div class="story">
+
+My name is Anshuman.<br><br>
+
+The first time I met her, I didn’t know she would become a memory that would stay with me for years.<br><br>
+
+When I was first admitted to school in LKG, there was a girl in my class who was very intelligent, smart, and beautiful. Her name was Sakshi.<br><br>
+
+We studied together in LKG, UKG, and Class 1. Three entire years in the same classroom, yet we had no interaction at all. We never spoke to each other. We were simply two classmates who shared the same classroom.<br><br>
+
+Then, in Class 2, around October, I left that school.<br><br>
+
+After leaving, my life went in a completely different direction. I didn’t attend school during Classes 3, 4, and 5. Those years passed without regular schooling. The only class I attended during that time was one online class in Class 4.<br><br>
+
+But those years were not entirely empty.<br><br>
+
+During that time, I learned a lot of mathematics, and slowly I developed a strong interest in computers.<br><br>
+
+Eventually, I returned to my homeland and was admitted to a school again.<br><br>
+
+My first day back at school after three and a half years was not easy. I felt nervous and underconfident. Everything felt unfamiliar again—new classrooms, new classmates, and a completely new environment.<br><br>
+
+But there was someone in that class whom I had actually met years ago.<br><br>
+
+She was Sakshi.<br><br>
+
+And in this class, she was the class monitor.<br><br>
+
+What surprised me the most was that she recognized me immediately, while I couldn’t recognize her at all.<br><br>
+
+Days passed, and I kept wondering how she knew me.<br><br>
+
+And how I came to this as <br><br>
+
+One day, while I was on the school bus, I heard a girl talking to her senior. She said,<br><br>
+
+"Ye hamare class ke monitor ka classmate tha pichhle school mein."<br><br>
+
+That was the moment I realized something.<br><br>
+
+The monitor of our class was Sakshi—the same girl who had studied with me in LKG, UKG, and Class 1.<br><br>
+
+Still, I wanted to be completely sure.<br><br>
+
+So I checked the school prospectus and found her picture. After seeing it, I finally confirmed it.<br>
+
+Yes.<br>
+
+She was the same Sakshi.<br><br>
+
+Even after confirming it, I didn’t tell anyone that she had been my classmate earlier. I wanted to confirm it directly from her.<br><br>
+
+After two or three days, Sakshi and her friends called me and asked,<br><br>
+
+“Anshuman, what is the homework for this period?”<br><br>
+
+All of them were smiling.<br><br>
+
+When I heard this, I felt confused, nervous, and shy at the same time. I kept thinking, Why did they ask me? Why not ask someone else?<br><br>
+
+For a moment, I almost froze.<br><br>
+
+I didn’t know what I should reply. My mind was blank. I thought, What should I say? What should I answer… to a whole group of girls?<br><br>
+
+For a few seconds, I just stood there, trying to think of the right reply.<br><br>
+
+Then came 15 August 2025.<br><br>
+
+That day, Sakshi came to me and said,<br><br>
+
+“Kaise ho Anshuman, theek ho?”<br><br>
+
+She said it faster than normal, as if she was in a hurry. She was smiling, but she also looked shy and a little awkward. It felt like her friends had forced her to come and say it, yet she still said it herself.<br><br>
+
+At that moment, I also felt very shy.<br><br>
+
+For a few seconds, everything around me felt completely silent. It was like the noise of the class suddenly disappeared.<br><br>
+
+When she asked me “Kaise ho Anshuman?”, I felt strangely close to her, as if she cared about asking it. It felt friendly, but at the same time I was a little nervous while replying.<br><br>
+
+Then I answered,<br><br>
+
+“Main theek hoon, aap kaisi hain?”<br><br>
+
+Instantly, her friend said that it was a dare.<br><br>
+
+I smiled and said,<br><br>
+
+“Yes, I know.”<br><br>
+
+Then came 1 November 2025, a Saturday and one day before my birthday.<br><br>
+
+Before asking her anything, I kept thinking to myself, Should I ask her… or should I not? What will happen if I ask? How will she react?<br><br>
+
+Many thoughts were running through my mind.<br><br>
+
+Then I suddenly thought, Tomorrow is my birthday. If I don’t ask today, maybe I will never ask.<br><br>
+
+At that moment my heartbeat started increasing. I was also thinking about how her friends might behave or what they might do if I asked her something like that.<br><br>
+
+But with all my determination, I finally went to her and said,<br><br>
+
+“Hey, I want to ask you something… how did you recognize me the very first time?”<br><br>
+
+My heart was beating faster than ever before. My body was slightly shivering, and I even felt cold. The whole situation felt very shy, nervous, and awkward.<br><br>
+
+She was smiling and listening to everything very carefully. She seemed completely focused on what I was saying.<br><br>
+
+But after I finished speaking, she became quiet.<br><br>
+
+She looked a little confused, as if she was thinking about what to say and how to reply.<br><br>
+
+Seeing that, I quickly said,<br><br>
+
+“You can answer this tomorrow as well.”<br><br>
+
+
+The next day was 2 November 2025, my birthday.<br><br>
+
+It was a Sunday, but the school was still open because there had been many holidays before, and the school wanted to complete the syllabus.<br><br>
+
+At the end of the 6th period, I gathered the courage to ask her again. Even at that moment, I was still full of shyness while speaking to her.<br><br>
+
+I asked her again how she had recognized me on the very first day.<br><br>
+
+This time she answered simply,<br><br>
+
+“By your face.”<br><br>
+
+Her answer surprised me.<br><br>
+
+Then she asked me,<br><br>
+
+“Tumne mujhe pehchana tha?”<br><br>
+
+I replied,<br><br>
+
+“Nahi, maine tumhe nahi pehchana tha.”<br><br>
+
+After that, we went for the sports class.<br><br>
+
+When we came back to the classroom, I asked her another question.<br><br>
+
+“Do you know how I recognized you?”<br><br>
+
+Then I showed her the school prospectus, in which her picture was printed. I pointed to the picture and asked,<br><br>
+
+“Is this you?”<br><br>
+
+She said yes.<br><br>
+
+Then I replied,<br><br>
+
+“That’s how I recognized you.”<br><br>
+
+When she was leaving, I said bye to her.<br><br>
+
+She didn’t say anything, but she looked at me and smiled shyly.<br><br>
+
+
+After that, one day our computer teacher, Saurav Sir, asked Sakshi to collect the copies and give them during lunch.<br><br>
+
+Sakshi was his favorite student, and I was also one of his favorite students.<br><br>
+
+During lunch, when Sir was passing by, I intentionally told him that the copies had been collected. I already knew they had been collected, but I said it mainly so that I could get a chance to talk to Sakshi while taking the copies from her.<br><br>
+
+Sir replied,<br><br>
+
+“Okay, go downstairs and put all the copies on the table.”<br><br>
+
+Then I went to Sakshi and called her name twice, but she didn’t hear me because she was talking with her friends.<br><br>
+
+One of her friends then told her that someone was calling her.<br><br>
+
+After that, I asked her where the computer copies were so that I could take them.<br><br>
+
+Then I went to Sakshi and called her name twice.<br><br>
+
+But she didn’t hear me because she was turned toward her friends and was talking to them.<br><br>
+
+However, one of her friends noticed that I was calling Sakshi. Instead of saying “Anshuman is calling you,” she simply said,<br><br>
+
+“Someone is calling you.”<br><br>
+
+She could have easily said my name, but she said “someone.” To me, it felt like she meant someone special to Sakshi.<br><br>
+
+After hearing that, Sakshi turned and looked at me.<br><br>
+
+Then I asked her calmly and confidently,<br><br>
+
+“Where are the computer copies?”<br><br>
+
+She replied,<br><br>
+
+“On the first bench.”<br><br>
+
+I went there, took all the computer copies, and then gave them to Saurav Sir.<br><br>
+
+
+After a few days, there was a school carnival.<br><br>
+
+After my performance, I came out of my rest room to watch her performance. She was wearing a yellow-orange saree and looked so gorgeous that I couldn’t express it in words.<br><br>
+
+Later, when she was going toward the office, I met her and said confidently,<br><br>
+
+“Your performance was very good.”<br><br>
+
+She smiled, said thank you, and seemed to be in a hurry to meet her parents in the office.<br><br>
+
+Later, when the carnival was still going on, she was standing with her friends and parents, enjoying the performances. By that time, almost half of the students and parents had already left.<br><br>
+
+I noticed that she was still there, and because of that I kept looking at her again and again.<br><br>
+
+Sakshi and her friends might have noticed that I was looking at her. When I realized this, I quickly changed my place.<br><br>
+
+But when I moved, they also came closer, and they were now sitting just behind my chair.<br><br>
+
+So I tried to ignore them, pretending as if I had not noticed them at all and stopped looking in their direction.<br><br>
+
+In my mind, I kept thinking that maybe she would come and say something like, “You were looking at me.”  
+Maybe she would ask me questions about it.<br><br>
+
+But nothing like that happened.<br><br>
+
+Still, I was feeling very nervous, shy, and awkward, because it felt like they had surrounded me.<br><br>
+
+At the end of the carnival, Sakshi was standing with her mother.<br><br>
+
+Even then, I gathered the courage to say bye to her in front of her mother.<br><br>
+
+Inside my mind, I had many thoughts and fears.<br><br>
+
+What will her mother think about this?<br>
+What will be her mother’s reaction?<br>
+Will Sakshi feel comfortable, shy, or awkward in this situation?<br><br>
+
+But when I said bye, something completely unexpected happened.<br><br>
+
+She simply waved her hand and said “bye” very calmly, as if there was no awkwardness at all.<br><br>
+
+Her mother looked at me, and then they both left.<br><br>
+
+After that moment, I was left in deep thought.<br><br>
+
+At the same time, I felt very calm and quiet inside.<br><br>
+
+Her simple reply made me feel as if nothing strange had happened.<br><br>
+
+It felt as if we were very close friends, and there was no awkwardness, no nervousness—only a quiet and comfortable friendship between us.<br><br>
+
+One day in the last period, Ma’am asked who the monitor was.<br><br>
+
+Everyone said the monitor was absent but the class captain was present.<br><br>
+
+Ma’am said,<br><br>
+
+“The class captain is the monitor itself.”<br><br>
+
+Then Ma’am asked me to write the names of students who were talking.<br><br>
+
+At that moment, a girl came into the class and said that Sir was calling the girls’ monitor.<br><br>
+
+The girls’ monitor, Aradhya, moved out of the class.<br><br>
+
+But I had something else in my mind.<br><br>
+
+Since Ma’am had just said that the class captain is the monitor, I wanted Sakshi to also be considered the monitor.<br><br>
+
+So suddenly I said,<br><br>
+
+“What Ma’am? You just said that the class captain is the monitor itself, then why did Aradhya move when the monitor was called?”<br><br>
+
+My sudden reaction shocked everyone in the class, because normally I was not expected to say something like that.<br><br>
+
+For a moment, the class became quiet.<br><br>
+
+Then Ma’am asked who the girl class captain was.<br><br>
+
+Everyone replied,<br><br>
+
+“Sakshi.”<br><br>
+
+At that moment I looked at her.<br><br>
+
+She was smiling and a little confused, as if she was wondering,<br><br>
+
+What just happened? Why did he say this?<br><br>
+
+Ma’am then said,<br><br>
+
+“Okay, tomorrow inform the in-charge.”<br><br>
+
+One day Sakshi was absent, but one of her best friends, Kritika, was present.<br><br>
+
+During lunch, I was talking with my friend. He said that he could get information about anyone.<br><br>
+
+As a joke, I said that I also wanted information about someone, but that I would tell the name later.<br><br>
+
+Suddenly Kritika said,<br><br>
+
+“Sakshi.”<br><br>
+
+For a moment, I was shocked, because I was not expecting her to say something like that.<br><br>
+
+I immediately tried to respond casually and said,<br><br>
+
+“What yaar… please don’t make it hyper. Just let it be normal.”<br><br>
+
+She replied,<br><br>
+
+“No one makes it hyper. Only Niharika sometimes makes it hyper.”<br><br>
+
+Then she said something that surprised me even more.<br><br>
+
+She said that Sakshi herself had told everyone that Anshuman likes her, and that Sakshi also knows that I like her.<br><br>
+
+Hearing this made me curious, so I asked her,<br><br>
+
+“Why do you think that I like her?”<br><br>
+
+She replied,<br><br>
+
+“From your actions and behavior, it seems that you like her.”<br><br>
+
+When the conversation was ending and I was about to leave, I asked one more question.<br><br>
+
+“Who else knows about this?”<br><br>
+
+She replied,<br><br>
+
+“Almost all the girls.”<br><br>
+
+That answer made me wonder deeply.<br><br>
+
+Does everyone really know about it?<br><br>
+
+The next day, I was asking Niharika about something.<br><br>
+
+She replied,<br><br>
+
+“I don’t know about that… but I know everything about you.”<br><br>
+
+Hearing this made me feel both shy and surprised.<br><br>
+
+Deep inside, I understood what she was trying to say, but I pretended as if I didn’t know anything.<br><br>
+
+So I replied,<br><br>
+
+“What do you know about me that even I don’t know? Tell me, what do you know about me?”<br><br>
+
+She said,<br><br>
+
+“I will tell you when the correct time comes.”<br><br>
+
+I replied,<br><br>
+
+“If the correct time comes, then I myself will tell everyone.”<br><br>
+
+After a moment, I said to her,<br><br>
+
+“I know whom you are talking about. Kritika has already told me about Sakshi. Who else knows about it?”<br><br>
+
+Niharika replied,<br><br>
+
+“Only me and Kritika know. No one else… not even Sakshi.”<br><br>
+
+This statement of Niharika made me completely confused.<br><br>
+
+Because Kritika had said that everyone knows, even Sakshi.<br><br>
+
+But Niharika said that no one knows, not even Sakshi.<br><br>
+
+Both of them were Sakshi’s friends, yet their statements were completely opposite.<br><br>
+
+I kept wondering,<br><br>
+
+What is the truth?<br><br>
+
+I felt shocked and confused.<br><br>
+
+And somewhere in my heart, I felt that Sakshi might actually know.<br><br>
+
+But then why did Niharika say that she doesn’t know anything?<br><br>
+
+What is the truth?<br><br>
+
+The girl I met twice… the girl who slowly became so important in my life.<br><br>
+
+Does she know how important she is to me?<br><br>
+
+Am I also important to her… someone she will never forget?<br><br>
+
+Or is she still completely unaware of my feelings?<br><br>
+
+I don’t know what she thinks about me.<br><br>
+
+But one day she will definitely know that Anshuman likes her.<br><br>
+
+And one day I will confess my feelings to her.<br><br>
+
+Because she is someone I cannot describe in words.<br><br>
+
+
+  Tum wo chaand ho jis par koi daag nahi.<br>
+Tum itni khoobsurat ho jiska koi hisaab nahi.<br><br>
+
+Ki… zameen ki shaan ho tum,<br>
+aasmaanon ki zaroorat ho.<br>
+Zameen ki shaan ho tum,<br>
+aasmaanon ki zaroorat ho.<br><br>
+
+Humein har roz kehna chahiye —<br><br>
+
+Tum khoobsurat ho…<br>
+tum khoobsurat ho.<br><br>
+
+Sometimes I feel,<br><br>
+
+Kaash tum chaand hoti, main sitara hota,<br>
+aasmaan mein aashiyana hamara hota.<br>
+Log tumhe door se dekhte,<br>
+paas aane ka haq sirf hamara hota.<br><br>
+
+I don’t know what you think about me.<br><br>
+
+But now I know one thing.<br><br>
+
+I don’t just like you anymore.<br><br>
+
+<h1 id="confession"><i>I love you, Sakshi.</i></h1><br>
+
+  </div>
+</div>
+
+<script>
+
+function startStory(){
+
+document.getElementById("intro").style.display="none";
+
+music.play();
+
+}
+  
+function createHeart(){
+
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(10+Math.random()*20)+"px";
+heart.style.animationDuration=(6+Math.random()*6)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},12000);
+
+}
+
+setInterval(createHeart,500);
+
+const music=document.getElementById("bgMusic");
+const btn=document.getElementById("musicBtn");
+
+function toggleMusic(){
+
+if(music.paused){
+music.play();
+btn.innerHTML="🔇 Stop Music";
+}
+else{
+music.pause();
+btn.innerHTML="🎵 Play Music";
+}
+
+}
+
+const confession=document.getElementById("confession");
+
+window.addEventListener("scroll",()=>{
+
+const position=confession.getBoundingClientRect().top;
+const screen=window.innerHeight;
+
+if(position < screen-100){
+confession.classList.add("show");
+}
+
+});
+
+  function createPetal(){
+
+const petal=document.createElement("div");
+petal.classList.add("petal");
+petal.innerHTML="🌸";
+
+petal.style.left=Math.random()*100+"vw";
+petal.style.fontSize=(12+Math.random()*18)+"px";
+petal.style.animationDuration=(6+Math.random()*5)+"s";
+
+document.body.appendChild(petal);
+
+setTimeout(()=>{
+petal.remove();
+},11000);
+
+}
+
+setInterval(createPetal,800);
+
+  document.addEventListener("mousemove", function(e){
+
+const heart=document.createElement("div");
+heart.classList.add("cursor-heart");
+heart.innerHTML="❤";
+
+heart.style.left=e.clientX+"px";
+heart.style.top=e.clientY+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},1000);
+
+});
+
+</script>
+
+</body>
+</html>
+  
+  
