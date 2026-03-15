@@ -89,20 +89,7 @@ cursor:pointer;
 box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
-#confession{
-text-align:center;
-font-size:34px;
-color:#ff0066;
-margin-top:40px;
-opacity:0;
-transition:all 2s ease;
-}
 
-#confession.show{
-opacity:1;
-text-shadow:0 0 20px pink,0 0 40px #ff4da6;
-transform:scale(1.1);
-}
 
 @media(max-width:600px){
 
@@ -196,44 +183,6 @@ opacity:0;
 }
 }
 
-  .cursor-heart{
-position:fixed;
-pointer-events:none;
-color:#ff4d88;
-font-size:18px;
-animation:heartFade 1s linear forwards;
-text-shadow:0 0 8px pink,0 0 15px #ff4da6;
-}
-
-@keyframes heartFade{
-0%{
-transform:scale(1);
-opacity:1;
-}
-100%{
-transform:scale(2);
-opacity:0;
-}
-}
-.big-heart{
-position:fixed;
-bottom:-30px;
-color:#ff2e6e;
-font-size:25px;
-pointer-events:none;
-animation:heartExplosion 6s linear forwards;
-}
-
-@keyframes heartExplosion{
-0%{
-transform:translateY(0) scale(0.8);
-opacity:1;
-}
-100%{
-transform:translateY(-110vh) scale(1.6);
-opacity:0;
-}
-}
 
   #questionBox{
 text-align:center;
@@ -257,14 +206,6 @@ color:white;
 cursor:pointer;
 }
 
-#confession{
-display:none;
-font-size:36px;
-color:#ff0066;
-margin-top:30px;
-text-shadow:0 0 20px pink,0 0 40px #ff4da6;
-}
-
 #noText{
 display:none;
 font-size:18px;
@@ -272,25 +213,7 @@ color:#555;
 margin-top:20px;
 }
   
-.corner-heart{
-position:fixed;
-font-size:25px;
-color:#ff2e6e;
-pointer-events:none;
-z-index:9999;
-animation:heartBurst 3.5s linear forwards;
-}
 
-@keyframes heartBurst{
-0%{
-transform:scale(0.3);
-opacity:1;
-}
-100%{
-transform:translateY(-120vh) scale(2);
-opacity:0;
-}
-}
   .transition-heart{
 position:fixed;
 font-size:28px;
@@ -782,8 +705,6 @@ I don’t just like you anymore.<br><br>
 
 <h1 id="confession"><i>I LOVE YOU SAKSHI ❤️</i></h1>
 
-<p id="noText">Hmm... maybe read the story again 😉</p>
-
 </div>
 
   </div>
@@ -837,46 +758,6 @@ btn.innerHTML="🎵 Play Music";
 }
 
 
-
-function heartExplosion(){
-
-for(let i=0;i<120;i++){
-
-const heart=document.createElement("div");
-heart.classList.add("big-heart");
-heart.innerHTML="❤";
-
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(15+Math.random()*40)+"px";
-heart.style.animationDuration=(3+Math.random()*2)+"s";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-heart.remove();
-},4000);
-
-}
-
-}
-
-function increaseMusic(){
-
-let vol = music.volume;
-
-const interval = setInterval(()=>{
-
-if(vol < 1){
-vol += 0.05;
-music.volume = vol;
-}
-else{
-clearInterval(interval);
-}
-
-},200);
-
-}
 
   function createPetal(){
 
@@ -939,12 +820,6 @@ window.location.href="confession.html";
 
 }
 
-function showNo(){
-
-const text=document.getElementById("noText");
-text.style.display="block";
-
-}
   const noBtn=document.getElementById("noBtn");
 
 function moveNo(){
@@ -965,10 +840,6 @@ noBtn.addEventListener("touchstart",moveNo);
   
 
 </script>
-  
-  <div id="loadingScreen">
-<h1 id="loadingText"></h1>
-  </div>
 
 </body>
 </html>
