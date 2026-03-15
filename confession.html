@@ -51,12 +51,26 @@ z-index:5;
 #loveText.show{
 opacity:1;
 transform:scale(1.2);
-animation:pulse 2s infinite alternate;
+animation:glowPulse 2s infinite alternate;
 }
 
-@keyframes pulse{
-from{transform:scale(1.15);}
-to{transform:scale(1.25);}
+@keyframes glowPulse{
+from{
+transform:scale(1.2);
+text-shadow:
+0 0 15px pink,
+0 0 30px #ff4da6,
+0 0 60px #ff66cc,
+0 0 80px #ff99dd;
+}
+to{
+transform:scale(1.25);
+text-shadow:
+0 0 20px pink,
+0 0 40px #ff4da6,
+0 0 70px #ff66cc,
+0 0 100px #ff99dd;
+}
 }
   
 .bg-heart{
@@ -93,7 +107,7 @@ opacity:0;
 <div id="countdown">3</div>
 
 <div id="loveText">
-<i>I LOVE YOU SAKSHI</i>
+<i>I Love You Sakshi</i>
 </div>
 
 <audio id="loveAudio">
