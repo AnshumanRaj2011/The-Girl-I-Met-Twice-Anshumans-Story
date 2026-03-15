@@ -61,7 +61,7 @@ to{transform:scale(1.25);}
   
 .bg-heart{
 position:fixed;
-bottom:-40px;
+bottom:-60px;
 color:#ff4da6;
 font-size:22px;
 opacity:0.7;
@@ -126,7 +126,7 @@ love.classList.add("show");
 audio.volume = 1;
 audio.play().catch(()=>{});
 
-setInterval(createBgHeart,400);
+const heartInterval = setInterval(createBgHeart,400);
 
 }
 
