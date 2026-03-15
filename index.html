@@ -215,6 +215,24 @@ transform:scale(2);
 opacity:0;
 }
 }
+  .big-heart{
+position:fixed;
+color:#ff2e6e;
+font-size:25px;
+pointer-events:none;
+animation:heartExplosion 4s linear forwards;
+}
+
+@keyframes heartExplosion{
+0%{
+transform:translateY(0) scale(0.5);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh) scale(2);
+opacity:0;
+}
+}
   
   
 </style>
@@ -777,6 +795,28 @@ heart.remove();
 },1000);
 
 });
+
+  function heartExplosion(){
+
+for(let i=0;i<120;i++){
+
+const heart=document.createElement("div");
+heart.classList.add("big-heart");
+heart.innerHTML="❤";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*40)+"px";
+heart.style.animationDuration=(3+Math.random()*2)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},4000);
+
+}
+
+  }
 
 </script>
 
